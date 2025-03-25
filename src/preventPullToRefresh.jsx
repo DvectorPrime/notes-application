@@ -4,7 +4,7 @@ const PreventPullToRefresh = ({ children }) => {
   useEffect(() => {
     const disablePullToRefresh = (e) => {
       // Prevent default action if the touch move is vertical
-      if (e.touches.length > 1 || e.touches[0].clientY > 0) {
+      if (e.touches.length === 1 && e.touches[0].clientY < 50) {
         e.preventDefault();
       }
     };
