@@ -27,9 +27,5 @@ body{
 }
 
 .tabs-section{
-  overflow: hidden;
-}
-
-.tabs-section:hover, .tabs-section:focus{
   overflow: auto;
 }
