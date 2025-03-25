@@ -1,6 +1,6 @@
 const welcomeMessage = `Welcome to Vector Prime Notes!
 
-This is a simple notes app with a toggle for Dark Mode—definitely worth trying.
+This is a simple notes app with a toggle for Dark Mode—definitely worth trying. You can get the application on a mobile device by clicking on your menu and then clicking on 'Add to Home Screen'. This will make it easy for you to access the web app at any time.
 
 How to Use the App:
 1. Log In: Ensure you have an internet connection to save notes to the database; otherwise, they are stored temporarily on your device.
