@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import { AppDataProvider } from './context/CurrentUserContext'
 
+import PreventPullToRefresh from './preventPullToRefresh'
+
 function App() {
   /* This is where routing will occur */
 
@@ -26,7 +28,9 @@ function App() {
 
   return (
     <AppDataProvider>
-      <RouterProvider router={router} />
+      <PreventPullToRefresh>
+        <RouterProvider router={router} />
+      </PreventPullToRefresh>
     </AppDataProvider>
   )
 }
