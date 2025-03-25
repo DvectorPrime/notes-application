@@ -1,0 +1,337 @@
+.tab-page{
+    background-color: rgb(0, 89, 255);
+    height: 100vh;
+    padding: 20px;
+}
+
+.tab-page.note-tab-section{
+    margin-top: -30px;
+    max-height: calc(100vh - 50px) !important;
+}
+
+.tab-page.dark{
+    background-color: rgb(0, 0, 100);
+}
+
+.menu-bar-button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    z-index: 17;
+}
+
+.menu-bar-button img{
+    width: 60px
+}
+
+.menu-bar-button:hover{
+    cursor: pointer;
+}
+
+.menu-bar{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background-color: blue;
+    max-width: 100vw;
+    width: 400px;
+    padding: 100px 10px;
+    z-index: 15;
+}
+
+.menu-bar.dark{
+    background-color: rgb(1, 1, 136);
+}
+
+.menu-bar .user-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 40px auto;
+    width: 120px;
+    height: 120px;
+    background-color: red;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.menu-bar .user-photo img{
+    width: 140px;
+}
+
+.username{
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.log-out{
+    background-color: rgb(27, 120, 241);
+    border: 2px solid white;
+    padding: 10px 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.delete-account{
+    background-color: red;
+    padding: 5px 10px;
+    font-weight: bold;
+    font-size: 1.5rem
+}
+
+.accounts-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+
+.log-out:hover{
+    background-color: blue;
+}
+
+.logo-container{
+    display: block;
+    
+}
+
+.logo-container img{
+    display: block;
+    margin: 0px auto;
+    width: 150px
+}
+
+.theme{
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 20;
+}
+
+.theme p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.light{
+    color: white
+}
+
+.dark{
+    color: black;
+}
+
+.toggle-bar{
+    width: 70px;
+    height: 46px;
+    border-radius: 30px;
+    padding: 3px;
+    background-color: rgb(27, 120, 241);
+    cursor: pointer;
+}
+
+.toggle-thumb{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.note-tab-section .logo-container img{
+    width: 100px
+}
+
+.search-notes-field{
+    display: block;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    margin: 10px auto 30px auto;
+    border-radius: 10px;
+    border: 2px solid blue;
+    width: 70%;
+}
+
+.search-notes-field:focus{
+    outline: 2px solid blue;
+}
+
+.search-notes-field.note-tab-section{
+    width: 100%;
+    font-size: 1rem;
+}
+
+.tabs-section{
+    width: 100%;
+    max-height: calc(100vh - 350px);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+}
+
+.tabs-section.note-tab-section{
+    display: block;
+    height: calc(100vh - 320px)
+}
+
+.tabs-section.note-tab-section h3{
+    font-size: 1rem;
+}
+
+.add-note-button{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: blue;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem
+}
+
+.add-note-button:hover{
+    background-color: rgb(27, 120, 241);
+}
+
+.add-note-button img{
+    height: 30px
+}
+
+.note-tab{
+    display: block;
+    width: calc(100% - 10px);
+    min-height: 120px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background-color: rgb(27, 120, 241);
+    border: 2px solid white;
+    position: relative;
+    padding: 40px 10px 30px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.note-tab:hover, .note-tab:focus{
+    outline: none;
+    background-color: blue;
+}
+
+.note-tab .tab-category:disabled{
+    position: absolute;
+    top: 5px;
+    left: 15px;
+    background-color: transparent;
+    border: 2px solid transparent;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black
+}
+
+.note-tab input:focus{
+    outline: 0px solid transparent;
+    border-bottom: 2px solid blue;
+}
+
+.note-tab ::placeholder{
+    color: black
+}
+
+.note-last-edited-time{
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.tabs-section.note-tab-section .note-last-edited-time{
+    top: inherit;
+    bottom: 4px !important;
+    font-size: 0.9rem;
+}
+
+.note-tab h3{
+    font-size: 1.3rem;
+    text-align: center;
+    color: rgb(247, 253, 255);
+    max-height: calc(1.3rem * 2.5);
+    overflow: hidden;
+}
+
+@media screen and (max-width: 900px) {
+    .tabs-section{
+        grid-template-columns: 1fr 1fr;
+    }   
+    .menu-bar-button img{
+        width: 40px
+    }
+
+    .theme{
+        left: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .search-notes-field{
+        font-size: 1rem;
+        width: 85%;
+    }
+
+    .tabs-section{
+        grid-template-columns: 1fr;
+    }   
+
+    .note-tab{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .menu-bar{
+        width: 100%;
+    }
+
+    .theme {
+        gap: 5px;
+        left: 10px
+    }
+
+    .theme p{
+        font-size: 0.8rem;
+    }
+    
+    .toggle-bar{
+        width: 35px;
+        height: 24px;
+        border-radius: 30px;
+        padding: 1px;
+        background-color: rgb(27, 120, 241);
+        cursor: pointer;
+        transition: all 1s;
+    }
+    
+    .toggle-thumb{
+        width: 13px;
+        height: 13px;
+        background-color: white;
+        border-radius: 50%;
+        transition: all 1s;
+    }
+}

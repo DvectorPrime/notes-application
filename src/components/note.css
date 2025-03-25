@@ -1,0 +1,188 @@
+.notepage{
+    width: 100vw;
+    height: 100vh;
+}
+
+.header-component{
+    display: block;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(0, 89, 255);
+}
+
+.header-component.dark{
+    background-color: rgb(0, 0, 100);
+}
+
+.arrow-back-button{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 15px;
+    left: 30px;
+    z-index: 17;
+    cursor: pointer;
+}
+
+.arrow-back-button img{
+    width: 50px
+}
+
+.note-main{
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    /* background-color: rgb(0, 0, 50); */
+}
+
+.note-main :disabled{
+    color: black
+}
+
+.hidden{
+    display: none !important;
+}
+
+.note-section{
+    height: calc(100vh - 80px);
+    padding: 20px;
+    display: block;
+}
+
+.note-section.dark {
+    background-color: rgb(20, 20, 150);
+}
+
+.note-title{
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    border-bottom: 2px solid rgb(0, 89, 255);
+    margin-bottom: 10px;
+    background-color: transparent;
+    resize: none;
+    max-height: fit-content;
+}
+
+.note-title::placeholder{
+    color: black
+}
+
+.note-title.editable{
+    outline: 2px solid rgb(0, 89, 255);
+    border: none;
+}
+
+.note-title.dark{
+    color: white;
+}
+
+.note-title.dark::placeholder{
+    color: white;
+}
+
+.note-category{
+    display: block;
+    min-width: 100px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 10px;
+    font-variant-caps: all-petite-caps;
+    background-color: transparent;
+}
+
+.note-category::placeholder{
+    color: black;
+}
+
+.note-category.editable{
+    outline: none;
+    border-bottom: 2px solid rgb(0, 89, 255);
+}
+
+.note-category.dark{
+    color: white
+}
+
+.note-category.dark::placeholder{
+    color: white;
+}
+
+.edit-save-button, .delete-note-button{
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: rgb(0, 89, 255);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.edit-save-button.dark, .delete-note-button.dark{
+    background-color: rgb(0, 0, 100);
+}
+
+.edit-save-button:hover, .delete-note-button:hover{
+    background-color: red;
+}
+
+.note-body{
+    display: block;
+    width: 100%;
+    height: calc(100% - 180px);
+    resize: none;
+    background-color: transparent;
+    border: none;
+}
+
+.note-body::placeholder{
+    color: black
+}
+
+.note-body.dark{
+    color: white;
+}
+
+.note-body.dark::placeholder{
+    color: white;
+}
+
+.note-body.editable{
+    outline: 2px solid rgb(0, 89, 255);
+}
+
+@media screen and (max-width: 900px) {
+    .note-main{
+        display: block;
+    }
+    
+    .tab-section{
+        display: none;
+    }   
+
+    .edit-save-button, .delete-note-button{
+        width: 100px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .header-component{
+        height: 60px;
+    }
+
+    .arrow-back-button{
+        top: 10px;
+        left: 10px;
+    }
+    
+    .arrow-back-button img{
+        width: 40px
+    }
+    
+}
