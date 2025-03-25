@@ -12,9 +12,9 @@ export const AppDataProvider = ({ children }) => {
   // Using the useState hook to initialize and manage the important variables
   const [notesInfo, setNotesInfo] = useState([])
   
-  const [currentUser, setCurrentUser] = useState("");
+  const [currentUser, setCurrentUser] = useState(localStorage.getItem("currentUser") ? JSON.parse(localStorage.getItem("currentUser")) : "");
   
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(localStorage.getItem("theme") ? JSON.parse(localStorage.getItem("theme")) : "light");
   
   const [currentNote, setCurrentNote] = useState("")
 

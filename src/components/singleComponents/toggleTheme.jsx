@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useAppData } from "../../context/CurrentUserContext"
 
 function ToggleTheme(){
@@ -7,6 +8,10 @@ function ToggleTheme(){
     function toggleTheme(){
         setTheme(prev => prev === "light" ? "dark" : "light")
     }
+    
+    useEffect(() => {
+        localStorage.setItem("theme", JSON.stringify(theme))
+    }, [theme])
 
     const toggleThumbStyle = {
         marginLeft: theme === "light" ? "0px" : window.innerWidth > 600 ? "29px" : "12px",

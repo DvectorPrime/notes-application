@@ -33,7 +33,7 @@ const Login = () => {
             const user = result.user;
             console.log(user)
             setCurrentUser(user)    
-            
+            localStorage.setItem("currentUser", JSON.stringify(user))
         } catch (error) {
             // Handle Errors here.
             const errorCode = error.code;

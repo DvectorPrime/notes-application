@@ -295,6 +295,10 @@
         width: 85%;
     }
 
+    .logo-container img{
+        width: 90px;
+    }
+
     .tabs-section{
         grid-template-columns: 1fr;
     }   
@@ -310,7 +314,7 @@
 
     .theme {
         gap: 5px;
-        left: 10px
+        left: 20px
     }
 
     .theme p{

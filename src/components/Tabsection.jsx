@@ -131,6 +131,7 @@ function TabSection({noteTabSection}) {
 
     function logOut(){
         setCurrentUser("")
+        localStorage.removeItem("currentUser")
     }
     /* Tab Components to be displayed from display notes */
 

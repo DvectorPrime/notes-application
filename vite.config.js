@@ -6,8 +6,8 @@ const manifestForPlugIn = {
   registerType:'prompt',
   includeAssests:['favicon.ico', "apple-touc-icon.png", "masked-icon.svg"],
   manifest:{
-    name:"React-vite-app",
-    short_name:"react-vite-app",
+    name:"Vector Prime Notes",
+    short_name:"VP Notes",
     description:"I am a simple vite app",
     icons:[{
       src: '/android-chrome-192x192.png',
@@ -34,8 +34,8 @@ const manifestForPlugIn = {
       purpose:'any maskable',
     }
   ],
-  theme_color:'#000054',
-  background_color:'#fff',
+  theme_color:'#000084',
+  background_color:'#000064',
   display:"standalone",
   scope:'/',
   start_url:"/",
