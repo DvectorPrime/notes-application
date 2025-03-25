@@ -8,7 +8,7 @@ const manifestForPlugIn = {
   manifest:{
     name:"Vector Prime Notes App",
     short_name:"VP Notes",
-    description:"Your note app that's accessible everywhere you go",
+    description:"Your note app that is accessible everywhere you go.",
     icons:[{
       src: '/logo-192x192.png',
       sizes:'192x192',
@@ -34,8 +34,8 @@ const manifestForPlugIn = {
       purpose:'any maskable',
     }
   ],
-  theme_color:'#171717',
-  background_color:'#f0e7db',
+  theme_color:'#000064',
+  background_color:'#ffffff',
   display:"standalone",
   scope:'/',
   start_url:"/",

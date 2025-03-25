@@ -31,7 +31,6 @@
 .note-main{
     display: grid;
     grid-template-columns: 320px 1fr;
-    /* background-color: rgb(0, 0, 50); */
 }
 
 .note-main :disabled{
