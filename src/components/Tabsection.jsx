@@ -172,7 +172,7 @@ function TabSection({noteTabSection}) {
             <input 
                 className={`search-notes-field ${noteTabSection && 'note-tab-section'}`} 
                 type='search' 
-                placeholder='Search for Notes...' 
+                placeholder='Search for Note...' 
                 onChange={findNote} 
             />
             <button className='add-note-button' onClick={addNote}><img src={addSign} /> Add Note</button>
