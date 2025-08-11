@@ -14,8 +14,7 @@ function NoteSection(){
 
     const {currentUser, currentNote, receiveUpdates, theme} = useAppData()
 
-    const [allowEditing, setAllowEditing] = useState(false)
-
+    
     const [currentNoteData, setCurrentNoteData] = useState({
         heading: currentNote.heading,
         body: currentNote.body,
@@ -23,6 +22,10 @@ function NoteSection(){
         date: currentNote.date,
         id: currentNote.id,
     })
+    
+    const isNew = (currentNoteData.date >= Date.now() - 10000) && currentNoteData.body === ""
+    
+    const [allowEditing, setAllowEditing] = useState(isNew ? true: false)
 
     const navigate = useNavigate()
 
@@ -90,7 +93,7 @@ function NoteSection(){
             <header className={`header-component ${theme === 'dark' && 'dark'}`}>
                  <button className='arrow-back-button'><img src={arrowBackIcon} onClick={goToTabs}/></button>
             </header>
-            <main className="note-main">
+            <main className={`note-main ${theme === 'dark' && 'dark'}`}>
                 <section className="tab-section">
                     <TabSection noteTabSection={true} allowEditing={true} />
                 </section>

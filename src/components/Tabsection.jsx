@@ -11,6 +11,8 @@ import './tabs.css';
 import addSign from '../assets/add-sign.svg'
 import menuBar from '../assets/menu-bar.svg'
 import closeIcon from '../assets/close.svg'
+import menuBarLight from "../assets/menu-bar-light.svg"
+import closeIconLight from '../assets/close-light.svg'
 import logo from '../assets/logo.png'
 
 import { useAppData } from '../context/CurrentUserContext';
@@ -143,13 +145,21 @@ function TabSection({noteTabSection}) {
                 setNotesInfo = {setNotesInfo}
                 notesInfo={notesInfo}
                 noteTabSection = {noteTabSection}
+                theme = {theme}
             />
         )
     })
 
     return (
         <main className={`tab-page ${noteTabSection && 'note-tab-section'} ${theme === 'dark' && 'dark'}`}>
-            <button className='menu-bar-button'><img src={isMenuShowing ? closeIcon : menuBar} onClick={toggleMenu}/></button>
+            <button className='menu-bar-button'>
+                {
+                    theme == 'dark' || noteTabSection == true ? 
+                    <img src={isMenuShowing ? closeIcon : menuBar} onClick={toggleMenu}/>
+                    :
+                    <img src={isMenuShowing ? closeIconLight : menuBarLight} onClick={toggleMenu}/>
+                }
+            </button>
             <ToggleTheme />
             <aside className={`menu-bar ${theme === 'dark' && 'dark'}`} style={{display: isMenuShowing ? 'block' : 'none'}}>
                 <div className='user-photo'>

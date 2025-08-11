@@ -3,7 +3,7 @@ import { useAppData } from "../../context/CurrentUserContext"
 import { useNavigate } from "react-router-dom"
 
 
-function Tab({note, notesInfo, setNotesInfo, noteTabSection}){
+function Tab({note, notesInfo, setNotesInfo, noteTabSection, theme}){
     const navigate = useNavigate()
     const { setCurrentNote } = useAppData()
 
@@ -21,7 +21,7 @@ function Tab({note, notesInfo, setNotesInfo, noteTabSection}){
     }
     
     return (
-        <button className={`note-tab ${noteTabSection && 'note-tab-section-heading'}`} onClick={openNote}>
+        <button className={`note-tab ${noteTabSection && 'note-tab-section-heading'} ${(theme === "dark") && "dark"}`} onClick={openNote}>
             <input 
                 type='text' 
                 value={note.category !== "" ? note.category : 'Add Category'} 

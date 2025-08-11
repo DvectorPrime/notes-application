@@ -15,11 +15,11 @@ function ToggleTheme(){
 
     const toggleThumbStyle = {
         marginLeft: theme === "light" ? "0px" : window.innerWidth > 600 ? "29px" : "12px",
-        backgroundColor: theme === "light" ? "white" : "blue"
+        backgroundColor: "#F59E0B"
     }
 
     const toggleBarStyle = {
-        border: theme === "light" ? "3px solid white" : "3px solid rgb(0, 0, 100)"
+        border: "3px solid #F59E0B"
     }
 
 
