@@ -23,7 +23,7 @@ function NoteSection(){
         id: currentNote.id,
     })
     
-    const isNew = (currentNoteData.date >= Date.now() - 10000) && currentNoteData.body === ""
+    const isNew = (currentNoteData.date >= Date.now() - 11000) && currentNoteData.body === ""
     
     const [allowEditing, setAllowEditing] = useState(isNew ? true: false)
 
