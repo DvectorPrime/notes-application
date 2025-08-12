@@ -3,16 +3,16 @@ import { useNavigate } from 'react-router-dom';
 // import {app, db} from '../firebase/firebaseConfig'
 // import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 // import { doc, setDoc, getDocs, collection } from "firebase/firestore"; 
-// import googleIcon from '../assets/google.png';
+import googleIcon from '../assets/google.png';
 
-// import { useAppData } from '../context/CurrentUserContext';
-// import ToggleTheme from './singleComponents/toggleTheme';
-// import welcomeMessage from '../assets/welcome_data';
-// import "./login.css"
+import { useAppData } from '../context/CurrentUserContext';
+import ToggleTheme from './singleComponents/toggleTheme';
+import welcomeMessage from '../assets/welcome_data';
+import "./login.css"
 
-// const Login = () => {
+const Login = () => {
     
-//     const {currentUser, setCurrentUser, theme} = useAppData()
+    const {currentUser, setCurrentUser, theme} = useAppData()
     
 //     const provider = new GoogleAuthProvider();
     
@@ -21,30 +21,30 @@ import { useNavigate } from 'react-router-dom';
 //     const navigate = useNavigate()
 
 //     //Authenticates User
-//     async function handleLogin() {
-//         try {
-//             const result = await signInWithPopup(auth, provider);
+    async function handleLogin() {
+        try {
+            const result = await signInWithPopup(auth, provider);
 
-//             // This gives you a Google Access Token. You can use it to access the Google API.
-//             const credential = GoogleAuthProvider.credentialFromResult(result);
-//             const token = credential.accessToken;
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            const credential = GoogleAuthProvider.credentialFromResult(result);
+            const token = credential.accessToken;
 
-//             // The signed-in user info.
-//             const user = result.user;
-//             console.log(user)
-//             setCurrentUser(user)    
-//             localStorage.setItem("currentUser", JSON.stringify(user))
-//         } catch (error) {
-//             // Handle Errors here.
-//             const errorCode = error.code;
-//             const errorMessage = error.message;
-//             alert(`${errorCode} : ${errorMessage}`)
-//             // The email of the user's account used.
-//             const email = error.customData.email;
-//             // The AuthCredential type that was used.
-//             const credential = GoogleAuthProvider.credentialFromError(error);
-//         }
-//     }
+            // The signed-in user info.
+            const user = result.user;
+            console.log(user)
+            setCurrentUser(user)    
+            localStorage.setItem("currentUser", JSON.stringify(user))
+        } catch (error) {
+            // Handle Errors here.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(`${errorCode} : ${errorMessage}`)
+            // The email of the user's account used.
+            const email = error.customData.email;
+            // The AuthCredential type that was used.
+            const credential = GoogleAuthProvider.credentialFromError(error);
+        }
+    }
 
 //     async function getUserInformation() {
 
