@@ -21,10 +21,10 @@ jobs:
         env:
           VITE_API_KEY: ${{ 'AIzaSyBk9haiRs4KbK5dCZPYB51xvJAtgdQ1N5s' }}
           VITE_AUTH_DOMAIN: ${{ 'notes-app-vn01.firebaseapp.com' }}
-          VITE_PROJECT_ID: ${{ secrets.VITE_PROJECT_ID }}
-          VITE_STORAGE_BUCKET: ${{ secrets.VITE_STORAGE_BUCKET }}
-          VITE_MESSAGING_SENDER_ID: ${{ secrets.VITE_MESSAGING_SENDER_ID }}
-          VITE_APP_ID: ${{ secrets.VITE_APP_ID }}
+          VITE_PROJECT_ID: ${{ 'notes-app-vn01' }}
+          VITE_STORAGE_BUCKET: ${{ 'notes-app-vn01.firebasestorage.app' }}
+          VITE_MESSAGING_SENDER_ID: ${{ '570934402735' }}
+          VITE_APP_ID: ${{ '1:570934402735:web:e4e5d75c78be5e78493e5a' }}
         run: npm run build
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
