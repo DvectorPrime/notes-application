@@ -1,4 +1,4 @@
-name: Deploy prebuilt dist to Firebase Hosting
+name: Deploy dist to Firebase Hosting
 
 on:
   push:
@@ -9,13 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # 1️⃣ Checkout code
       - uses: actions/checkout@v4
 
-      # Deploy directly from the existing dist folder
+      # 2️⃣ Install exact dependencies from package-lock.json
+      - run: npm ci
+
+      # 3️⃣ Deploy dist directly (no build step)
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NOTES_APP_VN01 }}"
           channelId: live
-
-
