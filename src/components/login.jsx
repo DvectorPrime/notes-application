@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import {app, db} from '../firebase/firebaseConfig'
-// import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-// import { doc, setDoc, getDocs, collection } from "firebase/firestore"; 
+import {app, db} from '../firebase/firebaseConfig'
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { doc, setDoc, getDocs, collection } from "firebase/firestore"; 
 import googleIcon from '../assets/google.png';
 
 import { useAppData } from '../context/CurrentUserContext';
@@ -14,13 +14,13 @@ const Login = () => {
     
     const {currentUser, setCurrentUser, theme} = useAppData()
     
-//     const provider = new GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
     
-//     const auth = getAuth(app);
+    const auth = getAuth(app);
 
-//     const navigate = useNavigate()
+    const navigate = useNavigate()
 
-//     //Authenticates User
+    //Authenticates User
     async function handleLogin() {
         try {
             const result = await signInWithPopup(auth, provider);
@@ -46,36 +46,36 @@ const Login = () => {
         }
     }
 
-//     async function getUserInformation() {
+    async function getUserInformation() {
 
-//         //Holds info on whether the user has a collection
-//         const noteSnapShots = await getDocs(collection(db, currentUser.uid))
+        //Holds info on whether the user has a collection
+        const noteSnapShots = await getDocs(collection(db, currentUser.uid))
 
-//         //Holds info for creating new collection if the user has none
-//         const notesRef = doc(db, currentUser.uid, "Welcome To Notes App")
+        //Holds info for creating new collection if the user has none
+        const notesRef = doc(db, currentUser.uid, "Welcome To Notes App")
         
-//         const data = {
-//             id: "Welcome To Notes App",
-//             heading: "A guide on how to use the notes app",
-//             body: welcomeMessage,
-//             date: Date.now(),
-//             category: "Welcome"
-//          }
+        const data = {
+            id: "Welcome To Notes App",
+            heading: "A guide on how to use the notes app",
+            body: welcomeMessage,
+            date: Date.now(),
+            category: "Welcome"
+         }
         
-//         if (noteSnapShots.length){
-//             navigate("/")
-//         } else {
-//             await setDoc(notesRef, data) 
-//             navigate("/")
-//         }
-//     }
+        if (noteSnapShots.length){
+            navigate("/")
+        } else {
+            await setDoc(notesRef, data) 
+            navigate("/")
+        }
+    }
     
-//     //Call getUserInformation to Authenticate User if there is no user authenticated
-//     useEffect(() => {
-//         if (currentUser != ""){
-//             getUserInformation()
-//         }
-//     }, [currentUser])
+    //Call getUserInformation to Authenticate User if there is no user authenticated
+    useEffect(() => {
+        if (currentUser != ""){
+            getUserInformation()
+        }
+    }, [currentUser])
 
     return (
         <div className={`login-page ${theme === 'dark' && 'dark'}`}>
