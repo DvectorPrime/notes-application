@@ -26,6 +26,15 @@ jobs:
       - name: Install dependencies
         run: npm ci # Use npm ci for clean installs in CI environments
 
+      - name: Check Environment Variables
+        run: |
+          echo "VITE_API_KEY is set to: $VITE_API_KEY"
+          echo "VITE_PROJECT_ID is set to: $VITE_PROJECT_ID"
+          # DO NOT print the actual values if they are highly sensitive
+          # Just seeing that they are not empty is enough, or print a masked version.
+          # For example: echo "VITE_API_KEY first 5 chars: ${VITE_API_KEY:0:5}"
+        # End of TEMPORARY DEBUGGING STEP ---
+
       - name: Build project
         run: npm run build # The env variables from the job level are now available here for Vite
 
